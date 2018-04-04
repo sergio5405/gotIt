@@ -18,6 +18,10 @@
 		B9CFBE8020721A7700E71FCE /* roboto in Resources */ = {isa = PBXBuildFile; fileRef = B9CFBE7F20721A7600E71FCE /* roboto */; };
 		B9CFBE872072203800E71FCE /* UILabelFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CFBE862072203800E71FCE /* UILabelFontExtension.swift */; };
 		B9CFBE892072206800E71FCE /* UITextViewFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CFBE882072206800E71FCE /* UITextViewFontExtension.swift */; };
+		B9EDBCE5207463E900039491 /* FeedTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EDBCE4207463E900039491 /* FeedTVCell.swift */; };
+		B9EDBCE72074A70600039491 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EDBCE62074A70600039491 /* Offer.swift */; };
+		B9EDBCE92074A72B00039491 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EDBCE82074A72B00039491 /* Product.swift */; };
+		B9EDBCEB2074A73200039491 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EDBCEA2074A73200039491 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		B9CFBE7F20721A7600E71FCE /* roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = roboto; sourceTree = "<group>"; };
 		B9CFBE862072203800E71FCE /* UILabelFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelFontExtension.swift; sourceTree = "<group>"; };
 		B9CFBE882072206800E71FCE /* UITextViewFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewFontExtension.swift; sourceTree = "<group>"; };
+		B9EDBCE4207463E900039491 /* FeedTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTVCell.swift; sourceTree = "<group>"; };
+		B9EDBCE62074A70600039491 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		B9EDBCE82074A72B00039491 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		B9EDBCEA2074A73200039491 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		CB655893C4CC145A476F1D79 /* Pods-gotIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-gotIt/Pods-gotIt.release.xcconfig"; sourceTree = "<group>"; };
 		E3BD2D70439D1CDA94A295C9 /* Pods-gotIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gotIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gotIt/Pods-gotIt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +88,7 @@
 		B9CFBE6620716A7500E71FCE /* gotIt */ = {
 			isa = PBXGroup;
 			children = (
+				B9EDBCE22073EA6F00039491 /* Model */,
 				B9CFBE792071996F00E71FCE /* GoogleService-Info.plist */,
 				B9CFBE6720716A7500E71FCE /* AppDelegate.swift */,
 				B9CFBE8120721E5200E71FCE /* Utilities */,
@@ -106,6 +115,7 @@
 			children = (
 				B9CFBE6920716A7500E71FCE /* FeedVC.swift */,
 				B9CFBE7D2071E3B000E71FCE /* FeedFilter.swift */,
+				B9EDBCE4207463E900039491 /* FeedTVCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -125,6 +135,16 @@
 				B9CFBE882072206800E71FCE /* UITextViewFontExtension.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B9EDBCE22073EA6F00039491 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B9EDBCE62074A70600039491 /* Offer.swift */,
+				B9EDBCE82074A72B00039491 /* Product.swift */,
+				B9EDBCEA2074A73200039491 /* Service.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F238E318C75C3560539DAEE8 /* Frameworks */ = {
@@ -316,9 +336,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9EDBCE72074A70600039491 /* Offer.swift in Sources */,
+				B9EDBCE92074A72B00039491 /* Product.swift in Sources */,
 				B9CFBE6A20716A7500E71FCE /* FeedVC.swift in Sources */,
 				B9CFBE892072206800E71FCE /* UITextViewFontExtension.swift in Sources */,
 				B9CFBE7E2071E3B000E71FCE /* FeedFilter.swift in Sources */,
+				B9EDBCEB2074A73200039491 /* Service.swift in Sources */,
+				B9EDBCE5207463E900039491 /* FeedTVCell.swift in Sources */,
 				B9CFBE6820716A7500E71FCE /* AppDelegate.swift in Sources */,
 				B9CFBE872072203800E71FCE /* UILabelFontExtension.swift in Sources */,
 			);

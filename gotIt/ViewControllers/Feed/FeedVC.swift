@@ -8,26 +8,40 @@
 
 import UIKit
 
-class FeedVC: UIViewController {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 3
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		return productTableView.dequeueReusableCell(withIdentifier: "feedTVCell", for: indexPath) as! FeedTVCell
+	}
+	
     @IBOutlet weak var filtersView: UIView!
-    @IBOutlet weak var productTableView: UITableView!
-    @IBOutlet var filterOptions: [UIView]!
+	@IBOutlet var filterOptions: [UIView]!
     @IBOutlet weak var distanceLbl: UILabel!
-    
+	@IBOutlet weak var productTableView: UITableView!
+	
     let blurredBackground = UIVisualEffectView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+		self.productTableView.delegate = self
+		self.productTableView.dataSource = self
+		
         setupFilterView()
-        // Do any additional setup after loading the view, typically from a nib.
     }
+	
+	
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+	
+//	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//		return 10
+//	}
 
 }
 
