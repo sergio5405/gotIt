@@ -10,11 +10,13 @@ import UIKit
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 3
+		return Feed.Global.offers.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return productTableView.dequeueReusableCell(withIdentifier: "feedTVCell", for: indexPath) as! FeedTVCell
+		let cell = productTableView.dequeueReusableCell(withIdentifier: "feedTVCell", for: indexPath) as! FeedTVCell
+		cell.offer = Feed.Global.offers[indexPath.row]
+		return cell
 	}
 	
     @IBOutlet weak var filtersView: UIView!
@@ -28,10 +30,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
 		self.productTableView.delegate = self
 		self.productTableView.dataSource = self
+		Feed.Global.downloadFeed()
+		self.productTableView.reloadData()
+		
 		
         setupFilterView()
     }
-	
 	
 
     override func didReceiveMemoryWarning() {
