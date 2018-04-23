@@ -16,9 +16,7 @@ extension FeedVC {
 	}
 	
 	func setupFilterView(){
-		self.blurredBackground.frame = self.view.bounds
 		self.blurredBackground.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		
 		
 		self.filtersView.layer.masksToBounds = false
 		self.filtersView.layer.shadowColor = UIColor.black.cgColor
@@ -38,6 +36,7 @@ extension FeedVC {
 	
 	@IBAction func showFilters(_ sender: Any) {
 		if self.filterOptions[0].isHidden{
+			self.blurredBackground.frame = CGRect(origin: CGPoint.zero, size: self.productTableView.contentSize)
 			self.view.bringSubview(toFront: self.filtersView)
 		}
 		

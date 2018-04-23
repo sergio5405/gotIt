@@ -16,6 +16,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = productTableView.dequeueReusableCell(withIdentifier: "feedTVCell", for: indexPath) as! FeedTVCell
 		cell.offer = Feed.Global.offers[indexPath.row]
+		cell.selectionStyle = .none
+		
 		return cell
 	}
 	
@@ -30,6 +32,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
 		self.productTableView.delegate = self
 		self.productTableView.dataSource = self
+		self.productTableView.separatorStyle = .none
+//		self.productTableView.
 		Feed.Global.downloadFeed()
 		self.productTableView.reloadData()
 		

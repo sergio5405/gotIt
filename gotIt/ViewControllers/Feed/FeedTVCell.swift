@@ -15,6 +15,7 @@ class FeedTVCell: UITableViewCell {
 	@IBOutlet weak var titleLbl: UILabel!
 	@IBOutlet weak var priceLbl: UILabel!
 	@IBOutlet weak var scheduleLbl: UILabel!
+	@IBOutlet weak var imgViewHeight: NSLayoutConstraint!
 	
 	var offer: Offer! {
 		didSet {
@@ -24,10 +25,16 @@ class FeedTVCell: UITableViewCell {
 	
 	func updateUI(){
 		cellImgView.image = offer.images?.first
+		if let image = offer.images?.first {
+			let ratio = image.size.width / image.size.height
+			let newHeight = cellImgView.frame.width / ratio
+			imgViewHeight.constant = newHeight
+		}
+		
 		distanceLbl.text = String(format: "%.01f km", locale: Locale.current, arguments: [offer.distanceTo])
 		titleLbl.text = offer.title
 		priceLbl.text = String(format: "$%.02f - $%.02f", locale: Locale.current, arguments: [offer.price.0, offer.price.1])
-
+		configureUIEffects()
 		
 		if let serviceOffer = offer as? Service{
 			let calendar = Calendar.current
@@ -38,12 +45,31 @@ class FeedTVCell: UITableViewCell {
 			let endH = endTime.hour
 			let endM = endTime.minute
 			scheduleLbl.text = String(format: "%d:%02d - %d:%02d", locale: Locale.current, arguments: [beginH!, beginM!, endH!, endM!])
-			bgViewColor.backgroundColor = UIColor(red: 5.0/255, green: 134.0/255, blue: 255.0/255, alpha: 1)
+			bgViewColor.backgroundColor = Utilities.UICol.ServiceColor
 		} else {
 			scheduleLbl.text = ""
-			bgViewColor.backgroundColor = UIColor(red: 255.0/255, green: 97.0/255, blue: 5.0/255, alpha: 1)
+			bgViewColor.backgroundColor = Utilities.UICol.ProductColor
 
 		}
+	}
+	
+	func configureUIEffects(){
+		bgViewColor.layer.masksToBounds = false
+		bgViewColor.layer.cornerRadius = 5
+		bgViewColor.layer.shadowColor = UIColor.black.cgColor
+		bgViewColor.layer.shadowRadius = 10
+		bgViewColor.layer.shadowOpacity = 1
+		bgViewColor.layer.shadowOffset = CGSize.zero
+		
+		distanceLbl.backgroundColor = UIColor.clear
+		distanceLbl.layer.masksToBounds = false
+		distanceLbl.layer.backgroundColor = UIColor(red: 0, green: 123/255, blue: 1, alpha: 1).cgColor
+		distanceLbl.layer.cornerRadius = 10
+		distanceLbl.layer.shadowColor = UIColor.black.cgColor
+		distanceLbl.layer.shadowRadius = 5
+		distanceLbl.layer.shadowOpacity = 1
+		distanceLbl.layer.shadowOffset = CGSize.zero
+		
 	}
 	
 }
