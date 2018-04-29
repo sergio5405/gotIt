@@ -13,5 +13,8 @@ target 'gotIt' do
 	pod 'FirebaseUI'
 	pod 'Firebase/Messaging'
 	pod 'AlamofireImage'
+	pod 'GoogleMaps'
+	pod 'Eureka'
+	pod 'NHRangeSlider'
 
 end

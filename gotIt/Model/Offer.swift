@@ -17,7 +17,7 @@ class Offer {
 	var latitude: Double
 	var distanceTo: Double
 
-	init(title: String, description: String, price: (Double, Double), longitude: Double, latitude: Double, distanceTo: Double){
+	init(title: String, description: String, price: (Double, Double), latitude: Double, longitude: Double, distanceTo: Double){
 		self.title = title
 		self.description = description
 		self.price = price

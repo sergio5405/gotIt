@@ -12,9 +12,9 @@ class Service: Offer {
 	var distanceRadius: Double
 	var schedule: (Date, Date)
 	
-	init(title: String, description: String, price: (Double, Double), longitude: Double, latitude: Double, distanceRadius: Double, distanceTo: Double, schedule: (Date, Date)){
+	init(title: String, description: String, price: (Double, Double), latitude: Double, longitude: Double, distanceRadius: Double, distanceTo: Double, schedule: (Date, Date)){
 		self.distanceRadius = distanceRadius
 		self.schedule = schedule
-		super.init(title: title, description: description, price: price, longitude: longitude, latitude: latitude, distanceTo: distanceTo)
+		super.init(title: title, description: description, price: price, latitude: latitude, longitude: longitude, distanceTo: distanceTo)
 	}
 }

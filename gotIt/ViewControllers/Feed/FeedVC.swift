@@ -9,16 +9,31 @@
 import UIKit
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let idOffer = Array(Feed.Global.offers.keys)[indexPath.row]
+	
+		print("didSelectRowAt \(idOffer)")
+		self.performSegue(withIdentifier: "showFeedDetailSegue", sender: idOffer)
+	}
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return Feed.Global.offers.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = productTableView.dequeueReusableCell(withIdentifier: "feedTVCell", for: indexPath) as! FeedTVCell
-		cell.offer = Feed.Global.offers[indexPath.row]
+		cell.offer = Array(Feed.Global.offers.values)[indexPath.row]
 		cell.selectionStyle = .none
 		
 		return cell
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "showFeedDetailSegue" {
+			if let feedDetailTVC = segue.destination as? FeedDetailVC {
+				let selectedOffer = Feed.Global.offers[sender as! String]
+				feedDetailTVC.offer = selectedOffer
+			}
+		}
 	}
 	
     @IBOutlet weak var filtersView: UIView!
@@ -33,23 +48,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		self.productTableView.delegate = self
 		self.productTableView.dataSource = self
 		self.productTableView.separatorStyle = .none
-//		self.productTableView.
 		Feed.Global.downloadFeed()
 		self.productTableView.reloadData()
 		
-		
         setupFilterView()
     }
-	
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-	
-//	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//		return 10
-//	}
-
 }
 

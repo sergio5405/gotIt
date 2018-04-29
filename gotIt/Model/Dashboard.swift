@@ -18,7 +18,7 @@ class Dashboard{
 		static func downloadMyDashboard(/*Filters*/) {
 			myProducts = [MyOffer]()
 			
-			let empanadas = Product(title: "Empanadas El Pana", description: "Deliciosas empanadas de nutella, mole, queso filadelfia con mermelada de zarzamora ", price: (25, 30), longitude: 19.14, latitude: 19.14, distanceTo: 3.71)
+			let empanadas = Product(title: "Empanadas El Pana", description: "Deliciosas empanadas de nutella, mole, queso filadelfia con mermelada de zarzamora ", price: (25, 30), latitude: 19.14, longitude: 19.14, distanceTo: 3.71)
 			var empanadasImg = [UIImage]()
 			empanadasImg.append(#imageLiteral(resourceName: "pana1"))
 			empanadasImg.append(#imageLiteral(resourceName: "pana2"))
@@ -30,7 +30,7 @@ class Dashboard{
 			
 			let df = DateFormatter()
 			df.dateFormat = "HH:mm"
-			let reparaciones = Service(title: "Reparacion de computadoras", description: "Deliciosas gomitas de sabores", price: (200, 1000), longitude: 19.14, latitude: 19.14, distanceRadius: 4, distanceTo: 1.21, schedule: (df.date(from: "12:00")!, df.date(from: "16:00")!))
+			let reparaciones = Service(title: "Reparacion de computadoras", description: "Deliciosas gomitas de sabores", price: (200, 1000), latitude: 19.14, longitude: 19.14, distanceRadius: 4, distanceTo: 1.21, schedule: (df.date(from: "12:00")!, df.date(from: "16:00")!))
 			var reparacionesImg = [UIImage]()
 			reparacionesImg.append(#imageLiteral(resourceName: "compu1"))
 			reparacionesImg.append(#imageLiteral(resourceName: "compu2"))
