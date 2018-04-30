@@ -1,5 +1,5 @@
 //
-//  ProductFormVC.swift
+//  ServiceFormVC.swift
 //  gotIt
 //
 //  Created by Sergio Hernandez Jr on 27/04/18.
@@ -7,27 +7,27 @@
 //
 
 import UIKit
-import Foundation
 import Eureka
-import NHRangeSlider
 
-class ProductFormVC: FormViewController {
+class ServiceFormVC: FormViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		setupColors()
 	}
-
+	
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return .lightContent
+	}
+	
 	func setupColors(){
 		UIView.animate(withDuration: 0.3) {
-			self.navigationController?.navigationBar.barTintColor = Utilities.UICol.ProductColor
+			self.navigationController?.navigationBar.barTintColor = Utilities.UICol.ServiceColor
 			self.navigationController?.navigationBar.tintColor = .white
 			self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
 			UIApplication.shared.statusBarStyle = .lightContent
 			self.navigationController?.navigationBar.layoutIfNeeded()
 		}
 	}
-	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		form +++ Section("Datos principales")
@@ -106,9 +106,22 @@ class ProductFormVC: FormViewController {
 			}
 			
 			+++ Section("Rango de venta")
-			<<< LocationRowProduct(){
+			<<< LocationRowService(){
 				$0.title = "Ubicación del servicio"
 				$0.add(rule: RuleRequired(msg: "Es necesario especificar el rango del producto"))
+			}
+			+++ Section("Horario de servicio")
+			
+			<<< WeekDayRow(){
+				$0.value = []
+			}
+			<<< TimeRow(){
+				$0.title = "Hora inicial"
+//				$0.minimumDate
+			}
+			<<< TimeRow(){
+				$0.title = "Hora final"
+				//				$0.minimumDate
 			}
 			+++ Section("")
 			<<< ButtonRow(){

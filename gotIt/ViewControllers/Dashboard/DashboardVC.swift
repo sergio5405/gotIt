@@ -12,9 +12,26 @@ import Eureka
 class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	@IBOutlet weak var tableView: UITableView!
 	
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return .default
+	}
+	
 	enum Offer {
 		case Products
 		case Services
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		setupUIColor()
+	}
+	func setupUIColor(){
+		UIView.animate(withDuration: 0.3) {
+			self.navigationController?.navigationBar.barTintColor = .white
+			self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.strokeColor: UIColor.black]
+			self.navigationController?.navigationBar.layoutIfNeeded()
+			UIApplication.shared.statusBarStyle = .default
+		}
 	}
 	
 	var offerSelected = Offer.Products

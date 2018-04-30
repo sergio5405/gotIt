@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B908D972209637C400F8C7B5 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B908D970209637C300F8C7B5 /* ImagePickerController.swift */; };
 		B908D973209637C400F8C7B5 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B908D971209637C400F8C7B5 /* ImageRow.swift */; };
+		B908D97B2096590B00F8C7B5 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B908D9772096590900F8C7B5 /* FloatLabelTextField.swift */; };
+		B908D97C2096590B00F8C7B5 /* WeekDaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B908D9782096590A00F8C7B5 /* WeekDaysCell.xib */; };
+		B908D97D2096590B00F8C7B5 /* EmojiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B908D9792096590B00F8C7B5 /* EmojiCell.xib */; };
 		B9440F4B209170CA00AA77D1 /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9440F45209170C900AA77D1 /* FeedDetailVC.swift */; };
 		B9440F4C209170CA00AA77D1 /* FeedDetailOfferHeaderV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9440F47209170CA00AA77D1 /* FeedDetailOfferHeaderV.swift */; };
 		B9440F4D209170CA00AA77D1 /* FeedDetailOfferImagePVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9440F48209170CA00AA77D1 /* FeedDetailOfferImagePVC.swift */; };
@@ -21,6 +24,7 @@
 		B98D4FE2208D60D800557418 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D4FE1208D60D800557418 /* Dashboard.swift */; };
 		B98D4FE4208D8D3900557418 /* MyOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D4FE3208D8D3900557418 /* MyOffer.swift */; };
 		B98D4FE6208DA0B300557418 /* DashboardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98D4FE5208DA0B300557418 /* DashboardTVCell.swift */; };
+		B9AF3B072097B6D200442777 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF3B062097B6D200442777 /* CustomCells.swift */; };
 		B9CFBE6820716A7500E71FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CFBE6720716A7500E71FCE /* AppDelegate.swift */; };
 		B9CFBE6A20716A7500E71FCE /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CFBE6920716A7500E71FCE /* FeedVC.swift */; };
 		B9CFBE6D20716A7500E71FCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9CFBE6B20716A7500E71FCE /* Main.storyboard */; };
@@ -44,6 +48,9 @@
 		8139B5BF4A2058243BC12D6B /* Pods_gotIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gotIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B908D970209637C300F8C7B5 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		B908D971209637C400F8C7B5 /* ImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
+		B908D9772096590900F8C7B5 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
+		B908D9782096590A00F8C7B5 /* WeekDaysCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekDaysCell.xib; sourceTree = "<group>"; };
+		B908D9792096590B00F8C7B5 /* EmojiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiCell.xib; sourceTree = "<group>"; };
 		B9440F45209170C900AA77D1 /* FeedDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
 		B9440F47209170CA00AA77D1 /* FeedDetailOfferHeaderV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailOfferHeaderV.swift; sourceTree = "<group>"; };
 		B9440F48209170CA00AA77D1 /* FeedDetailOfferImagePVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailOfferImagePVC.swift; sourceTree = "<group>"; };
@@ -56,6 +63,7 @@
 		B98D4FE1208D60D800557418 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		B98D4FE3208D8D3900557418 /* MyOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOffer.swift; sourceTree = "<group>"; };
 		B98D4FE5208DA0B300557418 /* DashboardTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTVCell.swift; sourceTree = "<group>"; };
+		B9AF3B062097B6D200442777 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
 		B9CFBE6420716A7500E71FCE /* gotIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gotIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CFBE6720716A7500E71FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9CFBE6920716A7500E71FCE /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
@@ -110,6 +118,10 @@
 			children = (
 				B908D970209637C300F8C7B5 /* ImagePickerController.swift */,
 				B908D971209637C400F8C7B5 /* ImageRow.swift */,
+				B9AF3B062097B6D200442777 /* CustomCells.swift */,
+				B908D9792096590B00F8C7B5 /* EmojiCell.xib */,
+				B908D9772096590900F8C7B5 /* FloatLabelTextField.swift */,
+				B908D9782096590A00F8C7B5 /* WeekDaysCell.xib */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -312,7 +324,9 @@
 			files = (
 				B9CFBE8020721A7700E71FCE /* roboto in Resources */,
 				B9CFBE7220716A7500E71FCE /* LaunchScreen.storyboard in Resources */,
+				B908D97C2096590B00F8C7B5 /* WeekDaysCell.xib in Resources */,
 				B9CFBE7A2071996F00E71FCE /* GoogleService-Info.plist in Resources */,
+				B908D97D2096590B00F8C7B5 /* EmojiCell.xib in Resources */,
 				B9CFBE6F20716A7500E71FCE /* Assets.xcassets in Resources */,
 				B9CFBE6D20716A7500E71FCE /* Main.storyboard in Resources */,
 			);
@@ -448,6 +462,7 @@
 				B9EDBCE72074A70600039491 /* Offer.swift in Sources */,
 				B9EDBCED2074C52700039491 /* Feed.swift in Sources */,
 				B908D972209637C400F8C7B5 /* ImagePickerController.swift in Sources */,
+				B908D97B2096590B00F8C7B5 /* FloatLabelTextField.swift in Sources */,
 				B9EDBCE92074A72B00039491 /* Product.swift in Sources */,
 				B9CFBE6A20716A7500E71FCE /* FeedVC.swift in Sources */,
 				B9440F4B209170CA00AA77D1 /* FeedDetailVC.swift in Sources */,
@@ -457,6 +472,7 @@
 				B98D4FE0208D5B3000557418 /* Utilities.swift in Sources */,
 				B9440F542093786600AA77D1 /* ServiceFormVC.swift in Sources */,
 				B9CFBE7E2071E3B000E71FCE /* FeedFilter.swift in Sources */,
+				B9AF3B072097B6D200442777 /* CustomCells.swift in Sources */,
 				B9440F4D209170CA00AA77D1 /* FeedDetailOfferImagePVC.swift in Sources */,
 				B9440F5220933A6E00AA77D1 /* ProductFormVC.swift in Sources */,
 				B9440F4F209170CA00AA77D1 /* FeedDetailOfferImagePVCExtension.swift in Sources */,

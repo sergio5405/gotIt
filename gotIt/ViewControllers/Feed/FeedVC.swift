@@ -50,8 +50,21 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		self.productTableView.separatorStyle = .none
 		Feed.Global.downloadFeed()
 		self.productTableView.reloadData()
-		
+		setupUIColor()
         setupFilterView()
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		setupUIColor()
+	}
+	func setupUIColor(){
+		UIView.animate(withDuration: 0.3) {
+			UIApplication.shared.statusBarStyle = .default
+			self.navigationController?.navigationBar.barTintColor = .white
+			self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.strokeColor: UIColor.black]
+			self.navigationController?.navigationBar.layoutIfNeeded()
+		}
+	}
 }
 
