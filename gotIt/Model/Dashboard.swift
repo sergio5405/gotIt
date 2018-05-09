@@ -56,11 +56,12 @@ class Dashboard{
 					let user = documentDic["user"] as! String
 					let location = documentDic["location"] as! GeoPoint
 					let active = documentDic["active"] as! Bool
+					let email = documentDic["email"] as! String
 					let state: DashboardVC.Offer
 					let product: Offer!
 					if offerType == "Product"{
 						state = .Products
-						product = Product(title: title, description: description, price: (minPrice!, maxPrice!), latitude: location.latitude, longitude: location.longitude, distanceTo: 1.53, user: user)
+						product = Product(title: title, description: description, price: (minPrice!, maxPrice!), latitude: location.latitude, longitude: location.longitude, distanceTo: 1.53, user: user, email: email)
 						arrProducts[id] = MyOffer(with: product, active: active)
 					}else{
 						state = .Services
@@ -75,7 +76,7 @@ class Dashboard{
 						let minDate = dateFormatter.date(from: minDateStr)!
 						let maxDate = dateFormatter.date(from: maxDateStr)!
 						
-						product = Service(title: title, description: description, price: (minPrice!, maxPrice!), latitude: location.latitude, longitude: location.longitude, distanceRadius: 1.424, distanceTo: 1.213, schedule: (minDate, maxDate), user: user)
+						product = Service(title: title, description: description, price: (minPrice!, maxPrice!), latitude: location.latitude, longitude: location.longitude, distanceRadius: 1.424, distanceTo: 1.213, schedule: (minDate, maxDate), user: user, email: email)
 						arrServices[id] = MyOffer(with: product, active: active)
 					}
 					

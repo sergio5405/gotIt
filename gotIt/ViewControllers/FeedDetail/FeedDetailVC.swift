@@ -10,9 +10,9 @@ import UIKit
 import FirebaseFirestore
 import Firebase
 import GoogleMaps
+import MessageUI
 
-
-class FeedDetailVC: UIViewController{
+class FeedDetailVC: UIViewController, MFMailComposeViewControllerDelegate{
     var offer: Offer!
     var cantidad : UInt = 1
 	let locationManager = CLLocationManager()
@@ -23,7 +23,30 @@ class FeedDetailVC: UIViewController{
 	@IBOutlet weak var offerPriceLbl: UILabel!
 	@IBOutlet weak var offerImagesHeaderView: FeedDetailOfferHeaderV!
     
-    override func viewDidLoad() {
+	@IBAction func btnContactAction(_ sender: UIButton) {
+		if !MFMailComposeViewController.canSendMail() {
+			print("Mail services are not available")
+			return
+		}
+		
+		sendEmail()
+	}
+	
+	func sendEmail() {
+		let composeVC = MFMailComposeViewController()
+		composeVC.mailComposeDelegate = self
+		// Configure the fields of the interface.
+		composeVC.setToRecipients([self.offer.email])
+		composeVC.setSubject("Un usuario está interesado en \(self.offer.title)")
+		// Present the view controller modally.
+		self.present(composeVC, animated: true, completion: nil)
+	}
+	
+	func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+		controller.dismiss(animated: true, completion: nil)
+	}
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 		setupUI()
 		setupMap()

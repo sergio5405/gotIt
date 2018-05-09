@@ -53,9 +53,9 @@ class Feed{
 					let maxPrice = prices["max"]
 					let user = documentDic["user"] as! String
 					let location = documentDic["location"] as! GeoPoint
-					
+					let email = documentDic["email"] as! String
  					if offerType == "Product"{
-						arrOffers[id] = Product(title: title, description: description, price: (minPrice!, maxPrice!), latitude: location.latitude, longitude: location.longitude, distanceTo: 1.53, user: user)
+						arrOffers[id] = Product(title: title, description: description, price: (minPrice!, maxPrice!), latitude: location.latitude, longitude: location.longitude, distanceTo: 1.53, user: user, email: email)
 					}else{
 						let dateFormatter = DateFormatter()
 						dateFormatter.dateFormat = "HH:mm"
@@ -68,7 +68,7 @@ class Feed{
 						let minDate = dateFormatter.date(from: minDateStr)!
 						let maxDate = dateFormatter.date(from: maxDateStr)!
 
-						arrOffers[id] = Service(title: title, description: description, price: (minPrice!, maxPrice!), latitude: location.latitude, longitude: location.longitude, distanceRadius: 1.424, distanceTo: 1.213, schedule: (minDate, maxDate), user: user)
+						arrOffers[id] = Service(title: title, description: description, price: (minPrice!, maxPrice!), latitude: location.latitude, longitude: location.longitude, distanceRadius: 1.424, distanceTo: 1.213, schedule: (minDate, maxDate), user: user, email: email)
 					}
 					
 					let urlsImages: [String] = documentDic["images"] as! [String]
