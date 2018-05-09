@@ -72,4 +72,9 @@ class FeedTVCell: UITableViewCell {
 		
 	}
 	
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		cellImgView.image = nil
+	}
+	
 }

@@ -15,6 +15,6 @@ target 'gotIt' do
 	pod 'AlamofireImage'
 	pod 'GoogleMaps'
 	pod 'Eureka'
-	pod 'NHRangeSlider'
-
+	pod 'NVActivityIndicatorView'
+	pod 'GoogleSignIn'
 end

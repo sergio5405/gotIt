@@ -27,7 +27,15 @@ class FeedDetailOfferImagePVC: UIPageViewController, UIPageViewControllerDataSou
                 let offerImageVC = storyboard.instantiateViewController(withIdentifier: "imageDetailViewController")
                 controllers.append(offerImageVC)
             }
-        }
+			self.pageViewControllerDelegate?.setupPageController(numberOfPages: controllers.count)
+		}else{
+			let offerImageVC = storyboard.instantiateViewController(withIdentifier: "imageDetailViewController")
+			controllers.append(offerImageVC)
+		}
+		
+		if controllers.count <= 1 {
+			self.dataSource = nil
+		}
         
         self.pageViewControllerDelegate?.setupPageController(numberOfPages: controllers.count)
         

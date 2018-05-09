@@ -26,7 +26,6 @@ import Foundation
 import Eureka
 
 public struct ImageRowSourceTypes : OptionSet {
-    
     public let rawValue: Int
     public var imagePickerControllerSourceTypeRawValue: Int { return self.rawValue >> 1 }
     
@@ -200,6 +199,8 @@ open class _ImageRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType where C
             imageView.contentMode = .scaleAspectFill
             imageView.image = image
             imageView.clipsToBounds = true
+			
+			
             
             cell.accessoryView = imageView
             cell.editingAccessoryView = imageView
